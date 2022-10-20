@@ -1,0 +1,24 @@
+
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info"
+        (click)="addMarker()">
+        + Add
+    </li>
+
+    <li class="list-group-item"
+        *ngFor="let marker of markers;let i =index"   
+        [ngStyle]="{
+            'background-color': marker.color}"
+        >  
+        <span (click)="goMarker(marker.marker!)">  go marker {{i+1}}   </span>  
+        <img src="../assets/delete.jpg" width="20px" (click)="deleteMarker(i)">
+       
+    </li>
+</ul>
+
+
+
+
+<div id="map" class="map-container"></div>
+
